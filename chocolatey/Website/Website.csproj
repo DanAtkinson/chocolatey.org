@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -21,6 +21,8 @@
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <CodeAnalysisAdditionalOptions>/assemblyCompareMode:StrongNameIgnoringVersion</CodeAnalysisAdditionalOptions>
     <RunCodeAnalysis Condition=" '$(CodeAnalysis)' == 'true' ">true</RunCodeAnalysis>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -244,6 +246,10 @@
     </Compile>
     <Compile Include="..\..\nugetgallery\Website\CuratedPackagesController.generated.cs">
       <Link>CuratedPackagesController.generated.cs</Link>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\nugetgallery\Website\PackagesController.generated.cs">
+      <Link>PackagesController.generated.cs</Link>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="..\..\nugetgallery\Website\DataServices\CountInterceptor.cs">
@@ -548,6 +554,10 @@
     </Compile>
     <Compile Include="..\..\nugetgallery\Website\RequestModels\ModifyCuratedPackageRequest.cs">
       <Link>RequestModels\ModifyCuratedPackageRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\nugetgallery\Website\RssController.generated.cs">
+      <Link>RssController.generated.cs</Link>
+      <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="..\..\nugetgallery\Website\Services\AggregateStatsService.cs">
       <Link>Services\AggregateStatsService.cs</Link>
@@ -1138,9 +1148,6 @@
     <Compile Include="Migrations\MigrationsConfiguration.cs" />
     <Compile Include="MvcOverrides\AppHarbor.cs" />
     <Compile Include="MvcOverrides\RequireHttpsAppHarborAttribute.cs" />
-    <Compile Include="PackagesController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="RouteNames.cs" />
     <Compile Include="Services\AmazonS3ClientWrapper.cs" />
     <Compile Include="Services\AmazonS3FileStorageService.cs" />
